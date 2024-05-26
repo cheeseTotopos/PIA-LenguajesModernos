@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "../api"
 import { useNavigate } from "react-router-dom";
 import { ACCES_TOKEN, REFRESH_TOKEN } from "../constants";
+import "../styles/Form.css"
 
 
 function Form({route, method}){
@@ -20,7 +21,7 @@ function Form({route, method}){
             const res = await api.post(route, {username, password})
             if(method === "login"){
                 localStorage.setItem(ACCES_TOKEN, res.data.access)
-                localStorage.setItem(REFRESH_TOKEN. res.data.refresh)
+                localStorage.setItem(REFRESH_TOKEN, res.data.refresh)
                 navigate("/")
             }else{
                 navigate("/login")
@@ -53,4 +54,4 @@ function Form({route, method}){
 
 }
 
-{}
+export default Form
