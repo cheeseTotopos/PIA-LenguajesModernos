@@ -21,6 +21,9 @@ function Form({route, method}){
             if(method === "login"){
                 localStorage.setItem(ACCES_TOKEN, res.data.access)
                 localStorage.setItem(REFRESH_TOKEN. res.data.refresh)
+                navigate("/")
+            }else{
+                navigate("/login")
             }
         } catch (error) {
             alert(error)
