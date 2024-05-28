@@ -19,7 +19,7 @@ class NoteListCreate(generics.ListCreateAPIView): #Lista y crea las notas del us
         else:
             print(serializer.errors)
         
-class NoteDelete(generics.CreateAPIView):
+class NoteDelete(generics.DestroyAPIView):
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
